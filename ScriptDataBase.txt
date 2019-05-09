@@ -1,0 +1,9 @@
+CREATE DATABASE FilesOnPC;
+GO
+Use FilesOnPC
+GO
+CREATE TABLE Files(
+id int PRIMARY KEY IDENTITY NOT NULL,
+[fileName] nvarchar(255) NOT NULL,
+binaryData VARBINARY(MAX) NOT NULL,
+[dateTime] dateTime2 NOT NULL) 

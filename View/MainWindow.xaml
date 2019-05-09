@@ -1,0 +1,28 @@
+﻿<Window x:Class="DataArt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataArt"
+        mc:Ignorable="d"
+        Title="DevArt" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="Open" Command="{Binding OpenFromDisc}"/>
+                    <MenuItem Header="Save" Command="{Binding CreateFileOnDisc}"/>
+                    <MenuItem Header="Push File To Data Base" Command="{Binding PushFileToServer}"/>
+                    <MenuItem Header="Get File From Data Base" Command="{Binding GetFileFromServer}"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <ScrollViewer VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1">
+            <TextBox x:Name="fileTextBox" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="TextBox_KeyUp"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
